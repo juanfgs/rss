@@ -28,7 +28,7 @@ func (self *Channel) Add(title, link, description string) {
 }
 
 func (self Channel) Marshal() []byte{
-	output,err := xml.Marshal(self)
+	output,err := xml.MarshalIndent(self,"  ", "    ")
 	if err != nil {
 		panic(err)
 	}
